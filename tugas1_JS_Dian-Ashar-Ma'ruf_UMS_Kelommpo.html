@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head><title>Tugas2_JS_Dian-Ashar-Ma'ruf_UMS_Kelompok2_Reza</title>
+        <script language="javascript">
+            //belajar variabel dan tipe data//
+            var pegawai = "Dian Ashar";
+            var jabatan ="Manager";
+            var status = "Menikah";
+            /*
+            Gaji Pokok=gapok
+            Manager => 15jt
+            Asisten manager => 10 Jt
+            Staf => 5 jt
+            */
+           if(jabatan == 'Manager'){
+                gatpok = 15000000;
+           }
+           else if(jabatan == 'Asisten manager'){
+                gatpok = 10000000;
+           }   else if(jabatan == 'Staf'){
+                gatpok = 5000000;
+           }else{
+                gatpok = 0;
+           }
+           /*
+           BPJS = 10% * Gatpok
+           Tunjangan Jabatan (tjjb)= 15% * Gatpok
+           Tunjangan Keluarga (tjkl)= 20% * Gatpok
+           */
+        
+            //ternary
+           if(status == 'Menikah') 
+                tjkl = 20/100 * gatpok;
+            else tjkl= 0;
+        
+            let bpjs = 10/100 * gatpok;
+            let tjjb = 15/100 * gatpok;
+        
+            //Total 
+            let tgatpok = gatpok + bpjs + tjjb + tjkl;
+            //cetak
+            document.write("<h3 align='center'>Data Gaji Anggota Perusahan</h3>");
+            document.write(
+            "<br/>Nama     : " + pegawai +
+            "<br/>Jabatan  : " + jabatan +
+            "<br/>Status   : " + status + 
+            "<br/>Gaji Pokok         : " + gatpok +
+            "<br/>BPJS               : " + bpjs +
+            "<br/>Tunjangan Jabatan  : " + tjjb +
+            "<br/>Tunjangan keluaraga: " + tjkl +
+            "<br/>Total Gaji         : " + tgatpok );
+          
+        /*Diketahui :
+        pegawai: Dian 
+        jabatan: manager
+        status: menikah
+        Tugas:
+        Cetak Data Pegawai berbentuk tabel:
+        Judul Kolom gunakan thead
+        Data2 gunakan tbody
+        Nama Pegawai, Jabatan, Status,
+        Gaji Pokok(if): Manager=>15 jt, Asisten Manager=>10 jt, Staff=>5 jt
+        Tunjangan Jabatan: 15% dari gapok
+        BPJS: 10% dari gapok
+        Tunjangan Keluarga (ternary): dilihat dari status yg sudah menikah =>20% dari gapok
+        Total Gaji: jumlahlahkan seluruh element gaji (gunakan tfoot)
+        Format pengumpulan tugas:
+        Disimpan di githubnya masing2:
+        contoh:
+        buat repo baru (javascript) -> file tugas di push di repo tsb
+        lalu linknya di assign ke LMS
+        */
+        </script>
+    </head>
+	<body>
+		<table align="center" border="1" cellpadding="10" cellspacing="2"
+		       width="1000PX">
+			<thead>
+				<tr bgcolor="#6FEDD6">
+					<th width="200px">Data</th>
+					<th width='400px'>Keterangan</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Gaji Pokok</td>
+					<td>
+                        <div id="gaji_pokok"></div>
+                    </td>
+				</tr>
+				<tr>
+					<td>Tunjangan Jabatan</td>
+					<td>
+                        <div id="tunjangan_jabatan"></div>
+                    </td>
+				</tr>
+                <tr>
+					<td>BPJS</td>
+					<td>
+                        <div id="bpjs_"></div>
+                    </td>
+				</tr>
+                <tr>
+					<td>Tunjangan Keluarga</td>
+					<td>
+                        <div id="tunjangan_keluarga"></div>
+                    </td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr bgcolor="#FF9551">
+					<td>Total Gaji</td>
+					<td>
+                        <div id="total_gaji"></div>
+                    </td>
+				</tr>
+			</tfoot>
+		</table>
+        <script>
+            // membuat objek elemen
+            var hasil = document.getElementById("gaji_pokok");
+            // menampilkan output ke elemen hasil
+            hasil.innerHTML = "RP " + gatpok;
+            // membuat objek elemen
+            var hasil = document.getElementById("tunjangan_jabatan");
+             // menampilkan output ke elemen hasil
+             hasil.innerHTML = "RP " + tjjb;
+            // membuat objek elemen
+            var hasil = document.getElementById("bpjs_");
+            // menampilkan output ke elemen hasil
+            hasil.innerHTML = "RP " + bpjs;
+            // membuat objek elemen
+            var hasil = document.getElementById("tunjangan_keluarga");
+             // menampilkan output ke elemen hasil
+             hasil.innerHTML = "RP " + tjkl;            
+             // membuat objek elemen
+            var hasil = document.getElementById("total_gaji");
+            // menampilkan output ke elemen hasil
+            hasil.innerHTML = "RP " + tgatpok;
+            // membuat objek elemen
+        </script>    
+	</body>
+
+</html>
+
