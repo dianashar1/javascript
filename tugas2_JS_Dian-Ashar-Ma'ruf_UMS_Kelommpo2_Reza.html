@@ -1,0 +1,86 @@
+<h3 align="center"> Data Gaji Pegawai </h3>
+<table align="center" cellpadding="10" width="40%">
+    <thead > 
+        <tr bgcolor="tomato">
+            <th>NO</th>
+            <th>JABATAN</th>
+            <th>GAJI POKOK</th>
+            <th>TUNJANGAN JABATAN</th>
+            <th>TUNJANGAN KESEHATAN</th>
+            <th>GAJI KOTOR</th>
+            <th>AGAMA</th>
+            <th>ZAKAT PROFESI</th>
+            <th>TAKEN HOME PAY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <script languang="javascript">
+             var no, warna, jabatan, agama;
+             let gapok, gator, tunjab, tunkes, zakpro, takhomp;
+
+             for(no = 0; no <= 100; no++)  {
+                
+                if (no <= 100 && no >= 75) {
+                    jabatan = 'Staff';
+                } else if (no < 74 && no >= 50) {
+                    jabatan = 'Supervisor';
+                } else if (no < 50 && no >= 25) {
+                    jabatan = 'Asisten manager';
+                } else if (no < 25 && no >= 1) {
+                    jabatan = 'Manager';
+                } else {
+                    gapok = 0;
+                }
+
+                switch(jabatan) {
+                case 'Manager':
+                    gapok = 15000000;
+                    break;
+                case 'Asisten manager':
+                    gapok = 10000000;
+                    break;
+                case 'Supervisor':
+                    gapok = 7000000;
+                    break;
+                case 'Staff':
+                    gapok = 5000000;
+                    break;
+                default:
+                    gapok = 0;
+                }
+
+                    gator = gapok + tunjab + tunkes;
+                    tunjab = 20/100 * gapok;
+                    tunkes = 10/100 * gapok;
+
+                warna = (no % 2 == 1 ) ? 'yellow' : 'aqua';
+
+                if(warna == 'yellow' && gapok >= 7000000) {
+                    agama = 'Muslim';
+                    zakpro = 2.5/100 * gapok;    
+                }
+                else {
+                    agama = 'Non Muslim'
+                    zakpro = 0;
+                }
+
+                takhomp = gator * zakpro;
+         
+                document.write(`<tr bgcolor="${warna}">
+                <td>${no}</td>
+                <td>${jabatan}</td>
+                <td>Rp ${gapok}</td>
+                <td>Rp ${tunjab}</td> 
+                <td>Rp ${tunkes}</td>
+                <td>Rp ${gator}</td>
+                <td>${agama}</td>
+                <td>Rp ${zakpro}</td>
+                <td>Rp ${takhomp}</td>
+                 </tr>`)
+             }
+        </script>
+    </tbody>
+</table>
+<h3 align="center"> Dian Ashar Ma'ruf</h3>
+<h3 align="center"> Universitas Muhammadiyah Surakarta </h3>
+<h3 align="center"> Kelompok 2 dgn Mentor Bp Reza</h3>
